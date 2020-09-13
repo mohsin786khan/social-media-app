@@ -3,6 +3,12 @@ const app=express();
 const port=8000;
 
 
+app.use('/',require('./routers'));
+
+
+app.set('veiw engine','ejs');
+app.set('views','./views');
+
 
 app.listen(port,function(err){
     if(err){
