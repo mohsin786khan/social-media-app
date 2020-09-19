@@ -1,11 +1,28 @@
 
-const { findOne } = require('../models/user');
 const User=require('../models/user');
 
 module.exports.profile=function(req,res){
-    return res.render('user_profile',{
-        title:'major'
-    })
+console.log(req.cookies.user_id);
+console.log(req.cookies);    
+   if(req.cookies.user_id)
+   {
+       User.findById(req.cookies.user_id,function(err,user){
+        if(user)
+       {
+           res.render('user_profile',{
+            title:"user profile",
+            user:user  
+           });
+       }
+       
+    else{
+      return res.redirect('/user/sign-in');
+    }
+       });      
+   }
+   else{
+       return res.redirect('user/sign-in');
+   }
 }
 
 
@@ -58,13 +75,13 @@ User.findOne({email:req.body.email}, function(err,user){
 // sign in and create a session for user
 module.exports.createSession=function(req,res){
 // steps to authenticate
+
 // find the user
 User.findOne({email:req.body.email},function(err,user) {
 
  if(err){console.log('error in finding in user signing in'); return}
     
  // handle user found
-
  if(user){
      // handle passord which does not match
   if(user.password!=req.body.password)
@@ -74,7 +91,6 @@ User.findOne({email:req.body.email},function(err,user) {
 
      // handle session creation
      res.cookie('user_id',user._id);
-     console.log('succesfully logged in  *****');
      return res.redirect('/user/profile');
  }
  else{
@@ -82,4 +98,13 @@ User.findOne({email:req.body.email},function(err,user) {
      return res.redirect('back');
  }
 });
+}
+
+
+
+//sign out
+module.exports.signOut=function(req,res){
+    res.clearCookie('user_id');
+    console.log('cookie is cleared');
+    return res.redirect('/user/sign-in');
 }
