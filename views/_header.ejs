@@ -1,19 +1,35 @@
 <header>
-    page header
+
+<div id="header">
+    <p id="p1"> codieal</p>
 
     <ul>
-        <% if (locals.user) {%>
-        <li><a href="/user/profile">
-            <%= user.name %>
-        </a></li>
-        <li><a href="/user/sign-out">sign-out</a></li>
+        <% if (locals.user){ %>
+        
+            <li>
+                <a href="/users/sign-in" >
+                    sign-in 
+                </a>
+            </li>
 
-            <%} else {%>
+            <li>
+                <a href="/users/sign-out" > Sign up</a>
+            </li>
 
-                <li><a href="/user/sign-in">sign-in</a></li>
+             
+     </div>   
+        <% }else{ %>
 
-                <li><a href="/user/sign-up">sign-up</a></li>
+            <li>
+                <a href="/users/sign-in">Sign In</a>
+            </li>
 
-                <% } %>
+            <li>
+                <a href="/users/sign-up">Sign Up</a>
+            </li>
+
+
+        <% } %>
     </ul>
+
 </header>

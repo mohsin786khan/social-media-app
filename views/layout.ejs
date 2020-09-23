@@ -1,22 +1,29 @@
 <html>
     <head>
+        <script src="https://kit.fontawesome.com/b9d3b32c3b.js" crossorigin="anonymous"></script>
         <title>
             <%= title  %>
         </title>
-        
         <link rel="stylesheet" href="/css/layout.css">
-    
+        <link rel="stylesheet" href="/css/header.css">
+        <link rel="stylesheet" href="/css/footer.css">
+      
         <%- style %>
+        
     </head>
 
     <body>
-        <%- include('_header') %>
+        <%- include('_header'); %>
+        
+        <main id="layout-main">
+            <%- body %>
 
-        <%- body %>
+        </main>
 
-        <%- include('_footer') %>
-       
-        <%- script %>   
+
+        <%- include('_footer'); %>
+
+        <%- script %>
+        
     </body>
-
 </html>

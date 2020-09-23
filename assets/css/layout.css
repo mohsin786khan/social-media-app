@@ -1,5 +1,4 @@
-body{
-    margin: 0px;
-    text-align: center;
-    background-color: aliceblue;
-}
+body {
+  margin: 0px; }
+  body #layout-main {
+    height: 100%; }
