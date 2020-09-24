@@ -6,18 +6,8 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    
-     #p1{
-         color: antiquewhite;
-         font-size: 25px;
-         padding-left: 10px;
-     }
 
-   li{
-        list-style: none;
-        display: inline-block;
     
-
     a{
         text-decoration: none;
         color: antiquewhite;
@@ -25,6 +15,12 @@
         padding-left: 10px;
    
 }
+    
+   li{
+        list-style: none;
+        display: inline-block;
+    
+
 }
 }
 

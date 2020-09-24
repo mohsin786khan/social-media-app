@@ -1,19 +1,21 @@
 <header>
 
 <div id="header">
-    <p id="p1"> codieal</p>
+
+    
+    <a href="/"> codieal</a>
 
     <ul>
         <% if (locals.user){ %>
         
             <li>
-                <a href="/users/sign-in" >
-                    sign-in 
+                <a href="/users/profile" >
+                    <%= user.name %>
                 </a>
             </li>
 
             <li>
-                <a href="/users/sign-out" > Sign up</a>
+                <a href="/users/sign-out" > Sign out</a>
             </li>
 
              
