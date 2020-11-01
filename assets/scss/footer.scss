@@ -1,30 +1,18 @@
-
-#footer{
-    width:100%;
-    height: 3rem;
-    background-color: darkgrey; 
-    display:flex;
-    flex-direction: row;
-
-    span{
-        color:antiquewhite;
-        padding-left: 10px;
-        font-size: 20px;
-        position: relative;
-        top: 15px;
-        padding-right: 10px;        
-    }
-    p{
-        color: antiquewhite;
-    }
-
-    li{
-      list-style: none;
-    }
-    
+#layout-footer{
+    color: white;
     a{
+        color: white;
         text-decoration: none;
-        color: antiquewhite;
     }
 
+    background: grey;
+    padding: 5px 10px;
+    display: flex;
+    justify-content: flex-start;
+
+    .footer-nav{
+        ul{
+            list-style: none;
+        }
+    }
 }
