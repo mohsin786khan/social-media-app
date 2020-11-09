@@ -16,14 +16,14 @@ module.exports.index = async function(req, res){
     return res.json(200, {
         message: "List of posts",
         posts: posts
-    });
+    })
 }
 
 
 module.exports.destroy = async function(req, res){
 
     try{
-        let post = await Post.findById(req.params.id);
+        let post = await Post.findById(req.params.id);//ye null hai ok but user api ka code bhi run nhi karraaha tha
 
         // if (post.user == req.user.id){
             post.remove();
