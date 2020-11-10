@@ -5,7 +5,7 @@ const JWT=require('jsonwebtoken');
 
 module.exports.createSession =async function(req, res){
     try{
-  let user= await User.findOne({email:req.body.email});//sahi hain id se kaise dundh lenge app ha bro it was wrong now try
+  let user= await User.findOne({email:req.body.email});
 
    if(!user && user.password!=req.body.password)
    {
@@ -17,10 +17,10 @@ module.exports.createSession =async function(req, res){
    return res.json(200,{
     message:"sign in successfull, here is your token",
     data:{
-        token:JWT.sign(user.toJSON(),'codial',{expiresIn:'10000'})
+        token:JWT.sign(user.toJSON(),'codial',{expiresIn:'1000000'})
     }
    });
-//phele post wala dekh te hai ok
+
     }
     catch(err){
         console.log('********', err);
