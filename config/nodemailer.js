@@ -15,9 +15,10 @@ auth:{
 }
 });
 
-let renderTemplate=(data, reativePath)=>{
+let renderTemplate=(data, relativePath)=>{
     let mailHtml;
     ejs.renderFile(
+    
         path.join(__dirname, '../views/mailers', relativePath),
         data,
         function(err, template){
