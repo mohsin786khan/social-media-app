@@ -13,7 +13,7 @@
                 data: newPostForm.serialize(),
                 success: function(data){
                 // adding post
-                    console.log(data);
+                    console.log(data);// see the data on console that has been sent
                     let newPost = newPostDom(data.data.post);
                     // deleting post
                     deletePost($(` .delete-post-button`,newPost));

@@ -9,7 +9,7 @@ module.exports.create = async function(req, res){
 
     try{
         let post = await Post.findById(req.body.post);
-
+        console.log(post);
         if (post){
             let comment = await Comment.create({
                 content: req.body.content,
@@ -18,10 +18,14 @@ module.exports.create = async function(req, res){
             });
 
             post.comments.push(comment);
-            post.save();    
+            post.save();  
+            
+         
+
      
             comment = await comment.populate('user','name  email').execPopulate();
 
+         
             //   commentsMailer.newComment(comment);
 
             let job=queue.create('emails',comment).save(function(err){
