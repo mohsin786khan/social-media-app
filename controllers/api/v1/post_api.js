@@ -23,7 +23,7 @@ module.exports.index = async function(req, res){
 module.exports.destroy = async function(req, res){
 
     try{
-        let post = await Post.findById(req.params.id);//ye null hai ok but user api ka code bhi run nhi karraaha tha
+        let post = await Post.findById(req.params.id);
 
         if (post.user == req.user.id){
             post.remove();
